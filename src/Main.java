@@ -21,7 +21,6 @@ public class Main {
     }
 
     public static void takeLetters() {
-        int result = 0;
         while (input.hasNextLine()) {
             String answer = input.nextLine();
             answer = answer.toLowerCase();
@@ -30,7 +29,7 @@ public class Main {
                 if ((character >= 'a') && (character <= 'z')) {
                     count[character - 'a']++;
                 }
-//                totalLetters++;
+                totalLetters++;
             }
         }
         makeResult();
