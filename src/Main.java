@@ -6,8 +6,9 @@ public class Main {
     private static final String filePath = "C:/Users/user/IdeaProjects/Letters/src/resources/output.txt";
     private static final int[] count = new int[26];
     private static int totalLetters;
+    private static String message = "Letters in file: ";
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         takeFile();
     }
 
@@ -33,25 +34,19 @@ public class Main {
             }
         }
         makeResult();
-        System.out.println("Letters in file: " + totalLetters);
     }
 
-
-
-    private static void makeResult() {
+    public static void makeResult() {
         for (int i = 0; i < 26; i++) {
             System.out.print((char) (i + 'a'));
             System.out.println(": " + count[i]);
         }
+        System.out.println(message + totalLetters);
         input.close();
     }
 
-    public static Scanner getInput() {
-        return input;
-    }
-
-    public static void setInput(Scanner input) {
-        Main.input = input;
+    public static String getMessage() {
+        return message;
     }
 
     static String getFilePath() {
@@ -60,9 +55,5 @@ public class Main {
 
     public static int getTotalLetters() {
         return totalLetters;
-    }
-
-    public static void setTotalLetters(int totalLetters) {
-        Main.totalLetters = totalLetters;
     }
 }
